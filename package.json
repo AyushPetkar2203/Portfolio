@@ -11,7 +11,7 @@
     "install-client":"cd Frontend && npm install",
     "build-client": "cd Frontend && npm run build",
     "server": "nodemon server.js --ignore client",
-    "client": "npm run dev",
+    "client": "cd Frontend &&  npm run dev",
     "start": "concurrently --kill-others-on-fail \" npm run server\" \"npm run client\""
   },
   "name": "porfolio",
