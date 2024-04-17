@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "client":"cd Frontend && npm run dev",
+    "server":"nodemon server.js --ignore client",
+    "start": "concurrently --kill-others-on-fail \" npm run server\" \"npm run client\""
+  },
+  "name": "porfolio",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
