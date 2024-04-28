@@ -8,22 +8,17 @@ function Home() {
   return (
     <div
       id="home"
-      className="flex flex-col justify-center relative z-[1] items-center pb-40"
+      className="flex flex-col justify-center items-center relative z-10 pb-40 pt-32 md:pt-48 lg:pt-64"
     >
-      <Typography
-        variant="h4"
-        textAlign="center"
-        style={{ color: textColor, marginTop: 240 }}
-      >
+      <Typography variant="h4" textAlign="center" className="text-[#d2b48c]">
         Hey! I'm
       </Typography>
-      <Typography variant="h4" textAlign="center" style={{ color: "white" }}>
+      <Typography variant="h4" textAlign="center" className="text-white">
         <b>Ayush Petkar</b>
       </Typography>
-      <Typography variant="h2" textAlign="center" style={{ color: "white" }}>
+      <Typography variant="h2" textAlign="center" className="text-white">
         I'm a{" "}
         <TypeAnimation
-          style={{ color: textColor, textDecorationLine: "underline" }}
           sequence={[
             "Java Developer.",
             3000,
@@ -37,20 +32,13 @@ function Home() {
           speed={20}
           repeat={Infinity}
           wrapper="span"
+          className="text-[#d2b48c] underline"
         />
       </Typography>
       <div className="animate-bounce pt-4">
-        <Link
-          style={{ paddingBottom: 500 }}
-          to="resume"
-          smooth={true}
-          duration={200}
-          offset={-90}
-        >
+        <Link to="resume" smooth={true} duration={200} offset={-90}>
           <IconButton>
-            <ArrowDownwardIcon
-              style={{ color: textColor, height: "50px", width: "500px" }}
-            />
+            <ArrowDownwardIcon className="text-[#d2b48c] size-max md:w-80" />
           </IconButton>
         </Link>
       </div>

@@ -8,7 +8,11 @@ import Resume from "./Components/Resume";
 import About from "./Components/About";
 import Project from "./Components/Project";
 import Contact from "./Components/Contact";
+import { useSelector } from "react-redux";
+import { getSideBar } from "./redux/SideBarSlice/SideBarSlice";
+import SmallSideBar from "./Components/SmallSideBar";
 function App() {
+  const sidebar = useSelector(getSideBar);
   return (
     <>
       <Router>
@@ -18,6 +22,7 @@ function App() {
         <Resume />
         <Project />
         <Contact />
+        {/* {sidebar ? <SmallSideBar /> : ""} */}
       </Router>
     </>
   );

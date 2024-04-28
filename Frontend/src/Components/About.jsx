@@ -18,6 +18,7 @@ import Java from "../assets/Java.png";
 import ReactImg from "../assets/ReactImg.png";
 import MongoDB from "../assets/MongoDB.png";
 import Javascript from "../assets/Javascript.png";
+import SQL from "../assets/SQL.png";
 function About() {
   const generatePDF = () => {
     const link = document.createElement("a");
@@ -39,68 +40,42 @@ function About() {
   return (
     <div
       id="about"
-      className="flex flex-col justify-center relative z-[1] items-center"
+      className="flex flex-col justify-center relative z-10 items-center"
     >
       <Typography
         textAlign="center"
         variant="h4"
         fontWeight="bold"
-        sx={{ paddingBottom: "20px", color: "white" }}
+        className="pb-5 text-white"
       >
         About Me
       </Typography>
-      <Typography textAlign="center" variant="h5">
-        <Grid
-          container
-          spacing={0}
-          direction="column"
-          alignItems="center"
-          justify="center"
-          display="flex"
-        >
-          <Grid item xs={3}>
-            <Card
-              sx={{ width: 800, borderBlock: "2px", backgroundColor: "black" }}
-            >
+      <Typography textAlign="center" variant="h5" className="text-center">
+        <div className="flex justify-center items-center">
+          <div className="w-full md:w-3/4 lg:w-1/2 xl:w-2/3">
+            <Card className="bg-black size-full">
               <CardMedia
                 component="img"
                 alt="Ayush Petkar"
                 image={Ayushphoto}
-                sx={{
-                  borderRadius: "50%",
-                  height: "300px",
-                  width: "300px",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  display: "inline",
-                }}
+                className="rounded-full h-48 w-48 mx-auto"
               />
               <CardContent>
-                <Typography variant="body2" color="white">
+                <Typography
+                  variant="body2"
+                  color="white"
+                  className="text-center"
+                >
                   If you are looking for a web developer, then here I am
                 </Typography>
               </CardContent>
-              <CardActions
-                disableSpacing
-                style={{
-                  display: "inline",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              <CardActions disableSpacing className="flex justify-center">
                 <IconButton aria-label="Download">
                   <Button
                     component="label"
                     variant="contained"
                     startIcon={<Download />}
-                    sx={{
-                      borderRadius: 28,
-                      background: "#d2b48c",
-                      alignContent: "center",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
+                    className="rounded-full bg-yellow-400"
                     onClick={generatePDF}
                   >
                     Download CV
@@ -108,33 +83,18 @@ function About() {
                 </IconButton>
               </CardActions>
             </Card>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </Typography>
-      <Logo
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          paddingTop: "200px",
-          paddingBottom: "200px",
-        }}
-      >
+      <div className="flex flex-wrap justify-evenly space-x-6 items-center pt-8 md:pt-16 lg:pt-24">
         <Items src={Java} alt="Java" />
-        <Items
-          src={SpringBoot}
-          alt="SpringBoot"
-          style={{ height: "100px", marginTop: "100px" }}
-        />
-        <Items
-          src={ReactImg}
-          alt="React"
-          style={{ height: "300px", width: "250px" }}
-        />
-        <Items src={MongoDB} alt="MongoDB" style={{ height: "300px" }} />
-        <Items src={Javascript} alt="Javascript" style={{ height: "300px" }} />
-        Javascript
-      </Logo>
+        <Items src={SpringBoot} alt="SpringBoot" className="h-24 mt-16" />
+        <Items src={ReactImg} alt="React" className="h-48 w-40" />
+        <Items src={MongoDB} alt="MongoDB" className="h-48" />
+        <Items src={Javascript} alt="Javascript" className="h-48" />
+        <Items src={SQL} alt="SQL" className="h-48" />
+      </div>
+      <div className="pb-60"></div>
     </div>
   );
 }

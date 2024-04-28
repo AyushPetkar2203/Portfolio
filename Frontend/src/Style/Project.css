@@ -1,34 +1,133 @@
-.image{
-    opacity: 1;
-    display: block;
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  /* transition: transform 0.5s;
+  backface-visibility: hidden; */
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%,-50%); */
+  /* -ms-transform: translate(-50%,-50%); */
+  text-align: center;
+  /* transition: transform 0.5s; */
+}
+
+.container:hover .image {
+  opacity: 0.3;
+  transform: rotateY(180deg);
+}
+
+.container:hover .middle {
+  opacity: 1;
+  /* transform: rotateY(-180deg); */
+}
+
+.text {
+  color: #d2b48c;
+  font-size: 26px;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+/* Card.css */
+.card-container {
+  perspective: 1000px;
+  width: 230px;
+  height: 300px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
+}
+
+.front img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container */
+  max-height: 100%; /* Ensure the image doesn't exceed the container */
+}
+
+.back-content {
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typing animation */
+.back-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent overlay */
+  animation: typing 2s steps(40, end) infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
     width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
+  }
 }
 
-.middle{
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    text-align: center;
+/* Add page turn animation */
+@keyframes pageTurn {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
 }
 
-.container:hover .image{
-    opacity: 0.3;
+@keyframes reversePageTurn {
+  from {
+    transform: rotateY(-180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
 }
 
-.container:hover .middle{
-    opacity: 1;
+.card-container:hover .card {
+  animation: pageTurn 0.8s ease-in-out forwards;
 }
 
-.text{
-    color:#d2b48c;
-    font-size: 26px;
-    padding: 16px 32px;
-    text-decoration: none;
+.card-container:not(:hover) .card {
+  animation: reversePageTurn 0.8s ease-in-out forwards;
 }

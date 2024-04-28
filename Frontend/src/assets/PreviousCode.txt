@@ -1,0 +1,118 @@
+{/* <div className="container mx-auto">
+              <Grid
+                item
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  width: "100%", // Full width on extra-small screens
+                  // "& > *": {
+                  //   // flex: "0 0 auto", // Resets the flex property of child elements
+                  //   flexDirection: "column",
+
+                  // },
+                  "@media (min-width:300px)": {
+                    flexDirection: "column", 
+                  },
+                  "@media (min-width:600px)": {
+                    // Medium screens
+                    width: "50%", // Half width on medium screens
+                    flexDirection: "column",
+                  },
+                  "@media (min-width:900px)": {
+                    // Large screens
+                    width: "33.3333%", // One-third width on large screens
+                    // flexDirection: "row",
+                  },
+                }}
+              >
+                {primarySkills.map((e) => (
+                  <div className="flex flex-col pr-16">
+                    <Card
+                      style={{
+                        height: "300px",
+                        width: "240px",
+                        marginBottom: "30px",
+                        backgroundColor: textColor,
+                      }}
+                    >
+                      <CardContent
+                        sx={{
+                          paddingBottom: { xs: 1, md: 2 }, // Padding bottom 8px for xs, 16px for md
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Typography
+                          variant="h5"
+                          fontWeight="bold"
+                          sx={{ textAlign: "center", paddingBottom: "20px" }}
+                        >
+                          {e.label}
+                        </Typography>
+                        <div className="w-[200] h-[200]">
+                          <CircularProgressbar
+                            value={e.value}
+                            text={e.value + "%"}
+                            styles={buildStyles({
+                              textColor: "black",
+                              pathColor: "black",
+                              trailColor: "rgb(167,202,237)",
+                            })}
+                          />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </Grid>
+            </div>
+            <div className="container mx-auto">
+              <div className="flex flex-col gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <Card
+                  sx={{
+                    flex: { xs: "0 0 100%", md: "0 0 50%", lg: "0 0 33.3333%" }, // 100% width on xs, 50% width on md, 33.3333% width on lg
+                    marginBottom: { xs: 2, lg: 4 }, // 8px margin on xs, 16px margin on lg
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexWrap: "wrap",
+                    backgroundColor: textColor,
+                  }}
+                >
+                  {secondarySkills.map((e) => (
+                    <CardContent sx={{ paddingBottom: "10px" }}>
+                      <Typography
+                        variant="h5"
+                        fontWeight="bold"
+                        alignItems="flex-start"
+                        display="flex"
+                      >
+                        {e.label}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        alignItems="flex-start"
+                        display="flex"
+                      >
+                        Progress: {e.value}%
+                      </Typography>
+                      <LinearProgress
+                        variant="determinate"
+                        value={e.value}
+                        sx={{
+                          height: 10,
+                          borderRadius: 10,
+                          width: "600px",
+                          "& .MuiLinearProgress-root": {
+                            backgroundColor: "lightgray",
+                          },
+                          "& .MuiLinearProgress-bar": {
+                            backgroundColor: "black",
+                          },
+                        }}
+                      />
+                    </CardContent>
+                  ))}
+                </Card>
+              </div>
+            </div> */}

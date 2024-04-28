@@ -7,6 +7,13 @@ import {
   NavbarLogo,
   Navigationbar,
 } from "../Style/Navbar.js";
+import { FaAlignRight } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getSideBar,
+  toggleSideBar,
+} from "../redux/SideBarSlice/SideBarSlice.jsx";
+import SmallSideBar from "./SmallSideBar.jsx";
 
 function Navbar() {
   const navlink = [
@@ -31,6 +38,11 @@ function Navbar() {
       name: "Contact",
     },
   ];
+  const dispatch = useDispatch();
+  const sidebar = useSelector(getSideBar);
+  const handleClick = () => {
+    dispatch(toggleSideBar());
+  };
   return (
     // < !--component -- >
     // <nav className="bg-black shadow shadow-gray-300 w-100">
@@ -63,24 +75,59 @@ function Navbar() {
     //   </div>
     // </nav>
     <>
-      <Navigationbar>
+      {/* <Navigationbar>
         <NavbarContainer>
           <NavbarLogo src={logo} alt="Ayush" />
           <NavItems>
-            {navlink.map((link) => (
-              <NavLinks
-                to={link.to}
-                spy={true}
-                smooth={true}
-                duration={200}
-                offset={-100}
-              >
-                {link.name}
-              </NavLinks>
-            ))}
+            <div>
+              <button className="md:hidden bg-[#d2b48c] border-transparent text-[1.75rem] cursor-pointer flex items-center">
+                <FaAlignRight />
+              </button>
+            </div>
+            <div className="hidden md:flex md:items-center md:space-x-10">
+              {navlink.map((link) => (
+                <NavLinks
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  duration={200}
+                  offset={-100}
+                >
+                  {link.name}
+                </NavLinks>
+              ))}
+            </div>
           </NavItems>
         </NavbarContainer>
-      </Navigationbar>
+      </Navigationbar> */}
+      <nav className="sticky top-0 z-10 flex items-center justify-center h-[100px] bg-black">
+        <div className="flex w-[90vw] items-center justify-between">
+          <NavbarLogo src={logo} alt="Ayush" />
+          <div>
+            <button
+              type="button"
+              className="md:hidden bg-transparent border-transparent text-[1.75rem] cursor-pointer flex items-center text-[#d2b48c]"
+              onClick={handleClick}
+            >
+              <FaAlignRight />
+            </button>
+            <div className="hidden md:flex md:items-center md:space-x-10">
+              {navlink.map((link) => (
+                <NavLinks
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  duration={200}
+                  offset={-100}
+                >
+                  {link.name}
+                </NavLinks>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+      {sidebar ? <SmallSideBar /> : ""}
     </>
   );
 }
