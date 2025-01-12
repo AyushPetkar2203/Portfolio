@@ -13,7 +13,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Ayushphoto from "../assets/Ayushphoto.jpg";
 function Contact() {
-  const textColor = "#d2b48c";
+  const textColor = "#03a56a";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -318,7 +318,7 @@ function Contact() {
               sx={{ paddingBottom: "50px" }}
             >
               <span className="text-gray-50">Get In</span>
-              <span className="text-[#d2b48c]">Touch</span>
+              <span className="text-[#03a56a]">Touch</span>
             </Typography>
             <div className="container">
               <div className="flex flex-row">

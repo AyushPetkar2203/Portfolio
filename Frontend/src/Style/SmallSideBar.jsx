@@ -5,7 +5,7 @@ const Wrapper = styled.aside`
     display: none;
   }
   .sidebar-container {
-    position: fixed;
+    position: sticky;
     inset: 0;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
@@ -20,6 +20,7 @@ const Wrapper = styled.aside`
     z-index: 99;
     opacity: 1;
     visibility: visible;
+    background-color: black;
   }
   .content {
     background: black;
@@ -64,6 +65,13 @@ const Wrapper = styled.aside`
   }
   .active {
     color: var(--primary-500);
+  }
+  .nav-links-container {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack the links vertically */
   }
 `;
 

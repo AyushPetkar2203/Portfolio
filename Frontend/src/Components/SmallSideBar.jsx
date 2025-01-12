@@ -36,27 +36,35 @@ function SmallSideBar() {
   };
   return (
     <Wrapper>
-      <div className={sidebar ? "sidebar-container show-sidebar" : "sidebar-container"}>
+      <div
+        className={
+          sidebar ? "sidebar-container show-sidebar" : "sidebar-container"
+        }
+      >
         <div className="content">
           <button type="button" className="close-btn" onClick={handleClose}>
             <FaTimes />
           </button>
         </div>
         <header>
-          <img src={logo} className="h-50 w-50 flex items-center justify-items-center" />
+          <img
+            src={logo}
+            className="h-50 w-50 flex items-center justify-items-center"
+          />
         </header>
-
-        {navlink.map((link) => (
-          <NavLinks
-            to={link.to}
-            spy={true}
-            smooth={true}
-            duration={200}
-            offset={-100}
-          >
-            {link.name}
-          </NavLinks>
-        ))}
+        <ul className="nav-links">
+          {navlink.map((link) => (
+            <NavLinks
+              to={link.to}
+              spy={true}
+              smooth={true}
+              duration={200}
+              offset={-100}
+            >
+              {link.name}
+            </NavLinks>
+          ))}
+        </ul>
       </div>
     </Wrapper>
   );

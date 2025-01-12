@@ -4,7 +4,7 @@ import JobHunt from "../assets/JobHunt.svg";
 import "../Style/Project.css";
 import { TypeAnimation } from "react-type-animation";
 function Project() {
-  const textColor = "#d2b48c";
+  const textColor = "#03a56a";
   const [start, setStart] = useState(false);
   const [rest, setRest] = useState(false);
   const [link, setLink] = useState(false);
@@ -106,7 +106,7 @@ function Project() {
                         speed={-10}
                         repeat={0}
                         wrapper="h1"
-                        className="text-[#d2b48c] underline"
+                        className="text-[#03a56a] underline"
                       />
                     </h1>
                     {rest ? (
@@ -128,7 +128,7 @@ function Project() {
                       ""
                     )}
                     {link ? (
-                      <h3 className="text-[#d2b48c] items-end justify-end pt-3">
+                      <h3 className="text-[#03a56a] items-end justify-end pt-3">
                         <a href="https://job-hunt-vazy.onrender.com/">
                           Explore the App-{">"}
                         </a>

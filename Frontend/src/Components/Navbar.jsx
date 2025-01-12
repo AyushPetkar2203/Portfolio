@@ -54,11 +54,11 @@ function Navbar() {
     //     </div>
     //     <div className="text-gray-500 order-3 w-full md:w-auto md:order-2">
     //       <ul className="flex font-semibold justify-between">
-    //         {/* <li className="md:px-4 md:py-2 hover:text-[#D2B48C] hover:underline"><a href="#">Resume</a></li> */}
+    //         {/* <li className="md:px-4 md:py-2 hover:text-[#03a56a] hover:underline"><a href="#">Resume</a></li> */}
     //         {/* underline transition duration-300 ease-in-out */}
     //         {navlink.map((link) => {
     //           return (
-    //             // <li className="md:px-4 md:py-2 hover:text-[#D2B48C] p-2 px-4 group"><Link to={link.to} activeStyle={{ color: '#D2B48C' }} spy={true} smooth={true} duration={200} offset={-100}>{link.name}<div className="bg-[#D2B48C] h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
+    //             // <li className="md:px-4 md:py-2 hover:text-[#03a56a] p-2 px-4 group"><Link to={link.to} activeStyle={{ color: '#03a56a' }} spy={true} smooth={true} duration={200} offset={-100}>{link.name}<div className="bg-[#03a56a] h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
     //             <NavLinks
     //               to={link.to}
     //               spy={true}
@@ -80,7 +80,7 @@ function Navbar() {
           <NavbarLogo src={logo} alt="Ayush" />
           <NavItems>
             <div>
-              <button className="md:hidden bg-[#d2b48c] border-transparent text-[1.75rem] cursor-pointer flex items-center">
+              <button className="md:hidden bg-[#03a56a] border-transparent text-[1.75rem] cursor-pointer flex items-center">
                 <FaAlignRight />
               </button>
             </div>
@@ -100,13 +100,13 @@ function Navbar() {
           </NavItems>
         </NavbarContainer>
       </Navigationbar> */}
-      <nav className="sticky top-0 z-10 flex items-center justify-center h-[100px] bg-black">
+      <nav className="top-0 z-10 flex items-center justify-center h-[100px] bg-black sticky">
         <div className="flex w-[90vw] items-center justify-between">
           <NavbarLogo src={logo} alt="Ayush" />
           <div>
             <button
               type="button"
-              className="md:hidden bg-transparent border-transparent text-[1.75rem] cursor-pointer flex items-center text-[#d2b48c]"
+              className="md:hidden bg-transparent border-transparent text-[1.75rem] cursor-pointer flex items-center text-[#03a56a]"
               onClick={handleClick}
             >
               <FaAlignRight />

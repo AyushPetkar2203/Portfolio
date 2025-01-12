@@ -51,7 +51,7 @@ export const NavLinks = styled(Link)`
 
   &:hover,
   &.active {
-    color: #d2b48c;
+    color: #03a56a;
   }
 
   &::before {
@@ -62,7 +62,7 @@ export const NavLinks = styled(Link)`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #d2b48c;
+    background-color: #03a56a;
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
@@ -79,7 +79,7 @@ export const NavLinks = styled(Link)`
     height: 2px;
     left: 50%;
     position: relative;
-    background: #d2b48c;
+    background: #03a56a;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }

@@ -18,7 +18,7 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 function Resume() {
-  const textColor = "#d2b48c";
+  const textColor = "#03a56a";
 
   const primarySkills = [
     {
@@ -54,14 +54,16 @@ function Resume() {
     <>
       <div
         id="resume"
-        className="flex flex-col lg:flex-row sticky pb-16 text-white container mx-auto px-4 lg:px-8"
+        className="flex flex-col sticky lg:flex-row pb-16 text-white container mx-auto px-4 lg:px-8"
       >
-        <div className="lg:w-1/4 sticky top-20 lg:top-32 h-[80vh] hidden md:flex md:items-center md:space-x-10">
+        <div
+          className="lg:w-1/4 sticky top-20 lg:top-32 h-[80vh] hidden md:flex md:items-center md:space-x-10"
+        >
           <List className="pt-5">
             {["Education", "Experience", "Skills"].map((text, index) => (
               <NavLinks
                 to={text}
-                offset={-100}
+                offset={-80}
                 spy={true}
                 duration={200}
                 smooth={true}

@@ -11,19 +11,37 @@ import Contact from "./Components/Contact";
 import { useSelector } from "react-redux";
 import { getSideBar } from "./redux/SideBarSlice/SideBarSlice";
 import SmallSideBar from "./Components/SmallSideBar";
+import { Card, CardContent } from "@mui/material";
 function App() {
   const sidebar = useSelector(getSideBar);
   return (
     <>
-      <Router>
-        <Navbar />
-        <Home />
-        <About />
-        <Resume />
-        <Project />
-        <Contact />
-        {/* {sidebar ? <SmallSideBar /> : ""} */}
-      </Router>
+      <div id="root">
+        <Router>
+          <Navbar />
+          <div className="p-4 rounded-lg">
+            <Card sx={{ backgroundColor: "#1a1a1a", position: "sticky" }}>
+              <CardContent
+                sx={{
+                  backgroundColor: "#1a1a1a",
+                  padding: "20px",
+                  borderRadius: "10px", // Rounded corners
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <Home />
+                <About />
+              </CardContent>
+            </Card>
+            <div className="bg-[#1a1a1a]">
+              <Resume />
+              <Project />
+            </div>
+          </div>
+          <Contact />
+          {/* {sidebar ? <SmallSideBar /> : ""} */}
+        </Router>
+      </div>
     </>
   );
 }
